@@ -1,44 +1,33 @@
-local C = require("catppuccin.palettes").get_palette()
-local O = require("catppuccin").options
-local catppuccin = {}
+local common_fg = "#9CB4C6"
+local inactive_bg = "#3E4850"
+local inactive_fg = "#EDE5D4"
 
-local transparent_bg = O.transparent_background and "NONE" or C.mantle
+return {
+	normal = {
+		a = { bg = "#6F818E", fg = common_fg, gui = "bold" },
+		b = { bg = "#53606A", fg = common_fg },
+		c = { bg = "#46525B", fg = "#E7DCC4" },
+	},
 
-catppuccin.normal = {
-	a = { bg = C.blue, fg = C.mantle, gui = "bold" },
-	b = { bg = C.surface1, fg = C.blue },
-	c = { bg = transparent_bg, fg = C.text },
+	insert = {
+		a = { bg = "#456763", fg = common_fg, gui = "bold" },
+	},
+
+	command = {
+		a = { bg = "#9E5179", fg = common_fg, gui = "bold" },
+	},
+
+	visual = {
+		a = { bg = "#615B51", fg = common_fg, gui = "bold" },
+	},
+
+	replace = {
+		a = { bg = "#643839", fg = common_fg, gui = "bold" },
+	},
+
+	inactive = {
+		a = { bg = inactive_bg, fg = inactive_fg, gui = "bold" },
+		b = { bg = inactive_bg, fg = inactive_fg },
+		c = { bg = inactive_bg, fg = inactive_fg },
+	},
 }
-
-catppuccin.insert = {
-	a = { bg = C.green, fg = C.base, gui = "bold" },
-	b = { bg = C.surface1, fg = C.teal },
-}
-
-catppuccin.terminal = {
-	a = { bg = C.green, fg = C.base, gui = "bold" },
-	b = { bg = C.surface1, fg = C.teal },
-}
-
-catppuccin.command = {
-	a = { bg = C.peach, fg = C.base, gui = "bold" },
-	b = { bg = C.surface1, fg = C.peach },
-}
-
-catppuccin.visual = {
-	a = { bg = C.mauve, fg = C.base, gui = "bold" },
-	b = { bg = C.surface1, fg = C.mauve },
-}
-
-catppuccin.replace = {
-	a = { bg = C.red, fg = C.base, gui = "bold" },
-	b = { bg = C.surface1, fg = C.red },
-}
-
-catppuccin.inactive = {
-	a = { bg = transparent_bg, fg = C.blue },
-	b = { bg = transparent_bg, fg = C.surface1, gui = "bold" },
-	c = { bg = transparent_bg, fg = C.overlay0 },
-}
-
-return catppuccin
